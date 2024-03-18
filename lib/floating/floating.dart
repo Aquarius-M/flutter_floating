@@ -167,6 +167,17 @@ class Floating {
     getScrollManager().scrollLeft(0);
   }
 
+  CommonControl getController() {
+    return _commonControl;
+  }
+
+  setPoint(double x, double y) {
+    _commonControl.setFloatingPoint((Point<double> point) {
+      point.x = x;
+      point.y = y;
+    });
+  }
+
   /// 获取悬浮位置[Size.width]表示距离left距离，[Size.height]表示top距离
   Point getFloatingPoint() {
     return _commonControl.getFloatingPoint();
